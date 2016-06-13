@@ -5,6 +5,9 @@
 Commonly used in anomaly detection algorithms.
 """
 
+__author__ = "Brandon Doyle"
+__email__ = "bjd2385@aperiodicity.com"
+
 from math import sqrt
 import numpy as np
 
