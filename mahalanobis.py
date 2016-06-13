@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Commonly used in anomaly detection algorithms. 
+A common anomaly detection algorithm. 
 
 Usage:
 >>> from mahalanobis import dM
