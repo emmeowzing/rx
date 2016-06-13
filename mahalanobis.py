@@ -2,7 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """
-Commonly used in anomaly detection algorithms.
+Commonly used in anomaly detection algorithms. 
+
+Usage:
+>>> from mahalanobis import dM
+>>> metric = dM(array)
+>>> distances = metric.mahalanobis()
 """
 
 from math import sqrt
@@ -30,8 +35,8 @@ class dM(object):
  
         # iterate over the original image and store dM in this new array
         distances = np.zeros([self.Xpix, self.Ypix])
-        for i in range(self.Xpix):
-            for j in range(self.Ypix):
+        for i in xrange(self.Xpix):
+            for j in xrange(self.Ypix):
                 distances[i][j] = sqrt(np.dot(np.dot(np.transpose(\
                 self.array[i][j] - mean_vector), variance_covariance), \
                 self.array[i][j] - mean_vector))
@@ -53,6 +58,6 @@ class dM(object):
         # compute the variance-covariance matrix for these RGB data
         matrix = np.array(sum([np.outer(np.array([reshaped_array[i] - \
            average]), np.array(reshaped_array[i] - average)) for i in \
-            range(len(reshaped_array))]) / len(reshaped_array))
+            xrange(len(reshaped_array))]) / len(reshaped_array))
  
         return np.linalg.inv(matrix)
