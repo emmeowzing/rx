@@ -17,19 +17,15 @@ __author__ = "Brandon Doyle"
 __email__ = "bjd2385@aperiodicity.com"
 
 class dM(object):
-  
     """ compute the Mahalanobis distance to every pixel in an array """
-
     def __init__(self, array):
         self.array = array
         self.Xpix = array.shape[0]
         self.Ypix = array.shape[1]
  
     def Mahalanobis(self):
-        
         """ Compute the Mahalanobis distance to every point in RGB 
         space within the image """
-        
         mean_vector = np.mean(self.array, axis=(0, 1))
         variance_covariance = self.__variance_covariance_()
  
