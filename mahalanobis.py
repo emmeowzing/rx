@@ -39,8 +39,7 @@ class dM(object):
         
         return distances
  
-    def __variance_covariance_(self, number=10000):
-    
+    def __variance_covariance_(self, number=10000): 
         """ create a variance-covariance matrix by randomly sampling the
         RGB space """
     
